@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.mc__lightBox,
+.mc__lightBox * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.mc__lightBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999999999;
+  transition: 0.5s;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  visibility: hidden;
+  padding: 50px 0;
+  overflow: auto;
+}
+
+.mc__lightBox.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.mc__lightBox .mc__lightBoxContent__overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.849);
+    cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAnElEQVRIie2UQQ6CMBREkTtI4P4nwYVEYEUXHue5sImEGJhplbBgVk3amdf2/7YoTh1OwA0YgcrwVMAdaJXFPW8FBRLDQ/Q8FMAVmKLhCTTG2noToEKSwxVIdvga5GfhM8i8iGExljvNOYm18zKDe8nwfvTXK/pWUOed2OErcx5EacVkiNPnSRBgcIq4aIJeAXSkfdcj0KmeU/vpBUpQ0gDjqZ40AAAAAElFTkSuQmCC"), auto;
+}
+
+
+.mc__lightBox .mc__lightBoxContentInner{
+    position: relative;
+    z-index: 1;
+    max-width: 90%;
+    width: 100%;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    max-width: max-content;
+}
+
+
+.mc__lightBox .mc__lightBoxContentInner > *{
+    max-width: 100%;
+}
+
+.mc__arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAABoElEQVRoge2aMU7DQBBF19wBlITjUJojcIwABwjXCgUlCQ0U3IESUwQJ6VF4QEgk2LM7s2uh/U1SrH/ey9qO7U0INTU1UQHOgTXwRvl09CytVuKmMPhfWWlmAmAHLIF5zIxaBpgDl8IEY2YGuJXBywyMqgBXwrYeM7iTwbMMbKoAM2F7HTMYgAxcUTnEd1QCxiNVZF+AO2ALnFj2xsJEHyPAvWz+5CUzmi9R5Bh4lIpnj9+gLCKyvatMNhHpcJPJKiI9LjLZRaTLXKaIiPSZyhQTkU4zmaIi0msiU1xEupNlJiEi/UkykxGRz4iWOcQ3latf+y+uwK6luhOdxK6VKqHiy3j6jXomUFTESkLFZy1iKaHisxSxllDxWYl4SKj4LES8JFR8qSKeEiq+FBFvCRVfoshGNs/+OMj6WusjhPAQQjhrmubFuFsXy9OvR3LNSLH8a5EuhH65KzPLYIBTeftroWefyEZeL9yI4vPFtB0cCbRyPO3o1+wWvmzDARbANfAubOOWqYEV08245ekfMi39In03UJwjcX8YqKmp+c4naGEVXxOFxssAAAAASUVORK5CYII=") center no-repeat;
+    background-size: 60%;
+    z-index: 2;
+}
+
+
+.mc__arrow.mc__arrow-left{
+    right: 0;
+    left: 20px;
+    transform: translateY(-50%) rotate(180deg);
+}

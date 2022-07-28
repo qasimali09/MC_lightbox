@@ -1,0 +1,1 @@
+const mBox = new MCLightBox('[mc_lightbox]');
